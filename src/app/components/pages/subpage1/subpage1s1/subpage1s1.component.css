@@ -1,0 +1,22 @@
+img{
+
+    display: block;
+    width: 400px;
+    margin: auto;
+    margin-top: 10vh;
+
+}
+
+p{
+
+    font-size: 30px;
+    width: fit-content;
+    margin: auto;
+}
+
+app-commentsection{
+    position: static;
+    width: 100%;
+    padding: 30px 0px;
+    top: 20vh;
+}

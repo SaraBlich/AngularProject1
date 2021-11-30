@@ -1,0 +1,23 @@
+<div class="addcomment">
+    
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <mat-form-field appearance="outline">
+            <textarea matInput name="comment" placeholder="Type a comment in here
+You won't regret it" [(ngModel)]="userComment.comment" required #commentField="ngModel" [class.fieldhaserror]="form.submitted && commentField.invalid"></textarea>
+
+            <mat-error *ngIf="commentField.invalid && form.touched">You can't just leave a comment field empty... Can you? :(</mat-error>
+        </mat-form-field>
+        <button mat-fab color="primary" type="submit" name="commentsend"><mat-icon>send</mat-icon></button>
+            
+    </form>
+        
+</div>
+    
+<div class="commentshow">
+    
+    <h1>Comments</h1>
+
+    <p>{{userComment | json}}</p>
+
+</div>

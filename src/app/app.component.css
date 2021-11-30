@@ -1,0 +1,22 @@
+#container {
+
+  min-height: 100%;  
+  position: relative;
+  
+}
+
+router-outlet{
+
+padding-bottom: 200px;
+
+}
+  
+app-footer{
+
+  height: 200px;
+  width: 100%;
+  position:absolute;
+  bottom: 0;
+  left: 0;
+
+}

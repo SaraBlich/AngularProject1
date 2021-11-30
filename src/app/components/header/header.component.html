@@ -1,0 +1,8 @@
+<h1 class="noselect">{{title}}</h1>
+
+<nav mat-tab-nav-bar>
+    
+    <a mat-tab-link routerLink="/main" (click)="activeLink = links[0]" [active]="activeLink == links[0]">Main Page</a>
+    <a mat-tab-link routerLink="/components" (click)="activeLink = links[1]" [active]="activeLink == links[1]">Components</a>
+
+</nav>

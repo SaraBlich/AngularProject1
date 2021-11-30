@@ -1,0 +1,22 @@
+@import '../../../custom-theme.scss';
+
+footer
+{
+    width: 100%;
+    background-color: $footer-color;
+}
+
+footer > mat-toolbar{
+
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.myName{
+
+    width: fit-content;
+    display: block;
+    right: 0;
+
+}
+
