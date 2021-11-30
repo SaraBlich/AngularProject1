@@ -1,22 +1,18 @@
 #container {
 
   min-height: 100%;  
-  position: relative;
-  
-}
 
-router-outlet{
-
-padding-bottom: 200px;
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: column;
 
 }
-  
+
+
+
 app-footer{
 
-  height: 200px;
   width: 100%;
-  position:absolute;
-  bottom: 0;
-  left: 0;
 
+  margin-top: auto;
 }
