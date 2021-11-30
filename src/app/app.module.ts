@@ -20,7 +20,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -29,10 +28,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    MainpageComponent,
-    Subpage1Component,
-    Subpage1s1Component,
-    CommentsectionComponent
+    // MainpageComponent,
+    // Subpage1Component,
+    // Subpage1s1Component,
+    // CommentsectionComponent
   ],
   imports: [
     FormsModule,
@@ -47,11 +46,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatGridListModule,
     RouterModule.forRoot([
-      {path: 'main', component: MainpageComponent},
-      {path: 'components', component: Subpage1Component},
-      {path: 'components/firstpost',component: Subpage1s1Component},
+      {path: 'main', loadChildren: () => import('./components/pages/mainpage/mainpage.module').then(n => n.MainpageModule)},
+      {path: 'components', loadChildren: () => import('./components/pages/subpage1/subpage1.module').then(n => n.Subpage1Module)},
+      {path: 'components/firstpost',loadChildren: () => import('./components/pages/subpage1/subpage1s1/subpage1s1.module').then(n => n.Subpage1s1Module)},
       {path:'',redirectTo:'main', pathMatch: 'full' },
     ]),
     BrowserAnimationsModule,
