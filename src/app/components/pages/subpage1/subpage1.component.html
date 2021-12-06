@@ -4,8 +4,9 @@
     <mat-divider></mat-divider>
     <mat-nav-list>
 
-        <mat-list-item>
-            <a routerLink="/components/firstpost"><p>My first post! :D</p></a>
+        <mat-list-item *ngFor="let posty of posties">
+            <a routerLink="./{{posty.postId}}"><p>{{posty.postTitle}}</p></a>
+            
         </mat-list-item>
 
     </mat-nav-list>

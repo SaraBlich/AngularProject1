@@ -1,0 +1,84 @@
+@import '../../../custom-theme.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div.addcomment{
+
+    position: static;
+    width: fit-content;
+    margin: auto;
+}
+
+form{
+
+    display: flex;
+    align-items: center;
+
+}
+
+form > div
+{
+    width: 82vw;
+}
+
+mat-form-field{
+
+width: 80vw;
+
+}
+
+div.commentshow{
+
+    width: 90%;
+    margin: auto;
+
+}
+
+.commentGrid
+{
+    border-radius: 1vw;
+    width: 80vw;
+    min-height: 80px;
+    margin: 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    gap:10px;
+}
+
+.profilePic
+{
+    min-height: 80px;
+    min-width: 80px;
+    background-color: $primary-color;
+    color: $primary-text-color;
+    border-radius: 1vw;
+    margin-left: 20px;
+
+}
+.profilePic > mat-icon
+{
+    font-size: 80px;
+}
+
+.profileData
+{
+    min-height: 80px;
+    flex-grow: 1;
+}
+
+.profileName
+{
+    padding: 6px 0;
+    font-size: 18px;
+}
+
+.profileComment
+{
+    margin: 0px;
+}

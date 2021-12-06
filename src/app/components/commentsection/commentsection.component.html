@@ -2,12 +2,23 @@
     
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-        <mat-form-field appearance="outline">
-            <textarea matInput name="comment" placeholder="Type a comment in here
-You won't regret it" [(ngModel)]="userComment.comment" required #commentField="ngModel" [class.fieldhaserror]="form.submitted && commentField.invalid"></textarea>
+        <div>
 
-            <mat-error *ngIf="commentField.invalid && form.touched">You can't just leave a comment field empty... Can you? :(</mat-error>
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput class="nicknameInput" type="text" name="nickname" placeholder="Your name" [(ngModel)]="nickname" required #nameField="ngModel" [class.fieldhaserror]="form.submitted && (nameField.invalid || commentField.invalid)" maxlength="20">
+                <mat-error *ngIf="commentField.invalid && form.touched" required autocomplete="off">Come on. There's no way you don't have a name!</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <textarea matInput name="comment" placeholder="Type a comment in here
+You won't regret it" [(ngModel)]="comment"  #commentField="ngModel" [class.fieldhaserror]="form.submitted && (nameField.invalid || commentField.invalid)" required></textarea>
+    
+                <mat-error *ngIf="commentField.invalid && form.touched">You can't just leave a comment field empty... Can you? :(</mat-error>
+            </mat-form-field>
+
+        </div>
+
+
         <button mat-fab color="primary" type="submit" name="commentsend"><mat-icon>send</mat-icon></button>
             
     </form>
@@ -17,7 +28,40 @@ You won't regret it" [(ngModel)]="userComment.comment" required #commentField="n
 <div class="commentshow">
     
     <h1>Comments</h1>
+    
+    <div class="commentGrid" *ngFor="let comment of commentSection">
 
-    <p>{{userComment | json}}</p>
+        <div class="profilePic">
+
+            <mat-icon>person</mat-icon>
+
+        </div>
+
+        <div class="profileData">
+
+            <div class="profileName">
+
+                <p>{{comment.nickname}}</p>
+
+            </div>
+            
+            <mat-divider></mat-divider>
+
+            <div class="profileComment">
+
+                <p>{{comment.comment}}</p>
+
+            </div>
+
+            
+
+
+
+        </div>
+
+        
+
+    </div>
+    
 
 </div>

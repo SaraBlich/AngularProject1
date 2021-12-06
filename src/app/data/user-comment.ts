@@ -1,5 +1,6 @@
 export interface UserComment{
-
-    comment: string
-
+    nickname: string;
+    comment: string;
+    parentId: number;
+    commentId: number;
 }

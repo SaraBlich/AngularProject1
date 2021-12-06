@@ -31,8 +31,8 @@ $AnguBlog-theme: mat.define-light-theme((
 ));
 
 
-$footer-color: mat.get-color-from-palette($md-mcgpalette0, 500);
-$footer-text-color: mat.get-contrast-color-from-palette($md-mcgpalette0, 500);
+$primary-color: mat.get-color-from-palette($md-mcgpalette0, 500);
+$primary-text-color: mat.get-contrast-color-from-palette($md-mcgpalette0, 500);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

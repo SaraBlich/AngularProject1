@@ -5,10 +5,6 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from '../app/components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
-import { MainpageComponent } from './components/pages/mainpage/mainpage.component';
-import { Subpage1Component } from './components/pages/subpage1/subpage1.component';
-import { Subpage1s1Component } from './components/pages/subpage1/subpage1s1/subpage1s1.component';
-import { CommentsectionComponent } from './components/commentsection/commentsection.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -20,6 +16,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { CommentsectionModule } from './components/commentsection/commentsection.module';
+import { Subpage1s1Module } from './components/pages/subpage1/subpage1s1/subpage1s1.module';
+import { Subpage1s2Module } from './components/pages/subpage1/subpage1s2/subpage1s2.module';
 
 
 
@@ -46,10 +45,12 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    CommentsectionModule,
+    Subpage1s1Module,
+    Subpage1s2Module,
     RouterModule.forRoot([
       {path: 'main', loadChildren: () => import('./components/pages/mainpage/mainpage.module').then(n => n.MainpageModule)},
       {path: 'components', loadChildren: () => import('./components/pages/subpage1/subpage1.module').then(n => n.Subpage1Module)},
-      {path: 'components/firstpost',loadChildren: () => import('./components/pages/subpage1/subpage1s1/subpage1s1.module').then(n => n.Subpage1s1Module)},
       {path:'',redirectTo:'main', pathMatch: 'full' },
     ]),
     BrowserAnimationsModule,
