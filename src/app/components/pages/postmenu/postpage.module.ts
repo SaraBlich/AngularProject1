@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Subpage1Component } from './subpage1.component';
+import { PostpageComponent } from './postpage.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
@@ -12,16 +12,16 @@ let id = 1;
 
 var routes: Routes = [
 
-    {path: '', component: Subpage1Component},
-    {path: '1',loadChildren: () => import('./subpage1s1/subpage1s1.module').then(n => n.Subpage1s1Module)},
-    {path: '2',loadChildren: () => import('./subpage1s2/subpage1s2.module').then(n => n.Subpage1s2Module)}
+    {path: '', component: PostpageComponent},
+    {path: '1',loadChildren: () => import('./post1/post1.module').then(n => n.Post1Module)},
+    {path: '2',loadChildren: () => import('./post2/post2.module').then(n => n.Post2Module)}
 
 ]
 
 
 
 @NgModule({
-  declarations: [Subpage1Component],
+  declarations: [PostpageComponent],
   imports: [
     
     RouterModule.forChild(routes),
@@ -33,4 +33,4 @@ var routes: Routes = [
 
   ]
 })
-export class Subpage1Module { }
+export class PostpageModule { }

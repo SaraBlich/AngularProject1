@@ -16,9 +16,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import { CommentsectionModule } from './components/commentsection/commentsection.module';
-import { Subpage1s1Module } from './components/pages/subpage1/subpage1s1/subpage1s1.module';
-import { Subpage1s2Module } from './components/pages/subpage1/subpage1s2/subpage1s2.module';
 
 
 
@@ -45,12 +42,9 @@ import { Subpage1s2Module } from './components/pages/subpage1/subpage1s2/subpage
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    CommentsectionModule,
-    Subpage1s1Module,
-    Subpage1s2Module,
     RouterModule.forRoot([
       {path: 'main', loadChildren: () => import('./components/pages/mainpage/mainpage.module').then(n => n.MainpageModule)},
-      {path: 'components', loadChildren: () => import('./components/pages/subpage1/subpage1.module').then(n => n.Subpage1Module)},
+      {path: 'components', loadChildren: () => import('./components/pages/postmenu/postpage.module').then(n => n.PostpageModule)},
       {path:'',redirectTo:'main', pathMatch: 'full' },
     ]),
     BrowserAnimationsModule,
